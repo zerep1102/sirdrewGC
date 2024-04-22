@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2024 at 04:15 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Apr 22, 2024 at 04:04 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `groupmsg`
+--
+
+CREATE TABLE `groupmsg` (
+  `id` int(11) NOT NULL,
+  `sender` varchar(255) NOT NULL,
+  `message_content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `groupmsg`
+--
+
+INSERT INTO `groupmsg` (`id`, `sender`, `message_content`) VALUES
+(1, '1', 'asdasd'),
+(2, '1', 'asdasd'),
+(3, '1', 'sadsad\r\n\r\n\r\n\r\n\r\n\r\n'),
+(4, '1', 'qwe\r\n'),
+(5, '1', ''),
+(6, '1', ''),
+(7, '1', ''),
+(8, '1', ''),
+(9, '1', ''),
+(10, '1', ''),
+(11, '1', ''),
+(12, '1', ''),
+(13, '1', 's'),
+(14, '1', 'ssssssssssss'),
+(15, '1', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
+(16, '1', ''),
+(17, '1', ''),
+(18, '1', ''),
+(19, '1', ''),
+(20, '1', ''),
+(21, '1', ''),
+(22, '1', 'asd'),
+(23, '1', 'qwewqeqwe\r\n'),
+(24, '1', ''),
+(25, '1', ''),
+(26, '1', ''),
+(27, '1', ''),
+(28, '1', ''),
+(29, '1', ''),
+(30, '1', ''),
+(31, '3', 'hi'),
+(32, '3', 'dg'),
+(33, '3', 'gggg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblveggies`
 --
 
@@ -33,7 +84,7 @@ CREATE TABLE `tblveggies` (
   `description` text NOT NULL,
   `price` double NOT NULL,
   `added_by` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblveggies`
@@ -81,7 +132,7 @@ CREATE TABLE `users` (
   `email` varchar(32) NOT NULL,
   `username` varchar(32) NOT NULL,
   `password` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -129,6 +180,12 @@ INSERT INTO `users` (`registration_order_no`, `receipt_no`, `student_no`, `lastn
 --
 
 --
+-- Indexes for table `groupmsg`
+--
+ALTER TABLE `groupmsg`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tblveggies`
 --
 ALTER TABLE `tblveggies`
@@ -137,6 +194,12 @@ ALTER TABLE `tblveggies`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `groupmsg`
+--
+ALTER TABLE `groupmsg`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tblveggies`
